@@ -1,13 +1,13 @@
 {
   "name": "zkui-loader",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "extended loader for vue-loader",
   "main": "src/index.js",
   "keywords": [
     "vux",
     "vue",
     "vue-loader",
-    "vux-loader",
+    "zkui-loader",
     "webpack-loader",
     "weui",
     "vue-components",
@@ -18,10 +18,10 @@
     "framework",
     "frontend"
   ],
-  "author": "airyland <airyland@qq.com>",
+  "author": "sampsong <sampsong@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airyland/vux-loader"
+    "url": "https://github.com/zhongku/zkui-loader.git"
   },
   "license": "MIT",
   "scripts": {

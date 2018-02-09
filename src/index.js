@@ -307,7 +307,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
   }
 
   if (hasPlugin('vux-ui', vuxConfig.plugins)) {
-    let mapPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/vux/src/components/map.json')
+    let mapPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/zkui/src/components/map.json')
     if (vuxConfig.options.vuxDev) {
       mapPath = path.resolve(vuxConfig.options.projectRoot, 'src/components/map.json')
     }
@@ -327,7 +327,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
    * ======== read vux locales and set globally ========
    */
   if (hasPlugin('vux-ui', vuxConfig.plugins)) {
-    let vuxLocalesPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/vux/src/locales/all.yml')
+    let vuxLocalesPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/zkui/src/locales/all.yml')
     if (vuxConfig.options.vuxDev) {
       vuxLocalesPath = path.resolve(vuxConfig.options.projectRoot, 'src/locales/all.yml')
     }

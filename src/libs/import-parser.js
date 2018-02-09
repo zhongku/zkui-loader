@@ -4,7 +4,6 @@ const stripComments = require('strip-comments')
 
 function parse(source, fn, moduleName) {
   // fix no space between import and { 
-  // ref https://github.com/airyland/vux/issues/1365
   source = source.replace(/import{/g, 'import {')
   source = source.replace(/\/\/\n/g, '')
   source = trimLine(source)

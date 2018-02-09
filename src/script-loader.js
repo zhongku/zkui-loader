@@ -20,12 +20,12 @@ module.exports = function (source) {
   if (i18nPluginsMatch.length) {
     i18nPlugin = i18nPluginsMatch[0]
   }
-  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('vux/src/components') > -1
+  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('zkui/src/components') > -1
   if (config.options.vuxDev && this.resourcePath.replace(/\\/g, '/').indexOf('src/components') > -1) {
     isVuxVueFile = true
   }
 
-  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/vux/src/components') > -1
+  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/zkui/src/components') > -1
 
   if (config.plugins.length) {
     config.plugins.forEach(function (plugin) {

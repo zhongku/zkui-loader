@@ -17,7 +17,7 @@ module.exports = function (source) {
       opts.components.forEach(function (component) {
         let file = `vux/${maps[component.originalName]}`
         if (vuxConfig.options.vuxDev) {
-          file = file.replace('vux/src/', './')
+          file = file.replace('zkui/src/', './')
         }
         str += `import ${component.newName} from '${file}'\n`
       })

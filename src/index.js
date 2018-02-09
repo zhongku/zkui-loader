@@ -89,7 +89,7 @@ module.exports = function (source) {
 
   // fix style path in dev mode
   if (config.options.vuxDev) {
-    source = source.replace(/vux\/src\/styles\/(.*?)/g, '../styles/$1')
+    source = source.replace(/zkui\/src\/styles\/(.*?)/g, '../styles/$1')
   }
 
   return source

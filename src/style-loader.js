@@ -22,9 +22,9 @@ module.exports = function (source) {
 
   if (config.options.vuxDev) {
     if (/App\.vue$/.test(this.resourcePath)) {
-      source = source.replace(/~vux\/src/g, '.')
+      source = source.replace(/~zkui\/src/g, '.')
     } else {
-      source = source.replace(/~vux\/src/g, '..')
+      source = source.replace(/~zkui\/src/g, '..')
     }
   }
 

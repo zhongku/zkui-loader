@@ -27,7 +27,7 @@ module.exports = function (source) {
   }
 
   if(vuxConfig.options.vuxDev && /main\.js/.test(this.resourcePath)) {
-    source = source.replace(/!vux\/src/g, '!.')
+    source = source.replace(/!zkui\/src/g, '!.')
   }
 
   if (vuxConfig.plugins.length) {

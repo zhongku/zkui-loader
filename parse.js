@@ -4,9 +4,9 @@ const escodegen = require('escodegen')
 // const plugin = require('babel-plugin-import')
 // console.log(babylon)
 const code = `import{ Group as Groups,
-  Cell } from 'vux'; import { X } from 'x'
+  Cell } from 'zkui'; import { X } from 'x'
 import a from './a'
-import x from 'vux/src/components/cell'
+import x from 'zkui/src/components/cell'
  var b = '1'`
 
 const rs = babylon.parse(code, {

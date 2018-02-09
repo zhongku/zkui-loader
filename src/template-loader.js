@@ -29,8 +29,8 @@ module.exports = function (source) {
     return source
   }
   const basename = path.basename(this.resourcePath)
-  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('vux/src/components') > -1
-  let isVuxVueDemo = this.resourcePath.replace(/\\/g, '/').indexOf('vux/src/demos') > -1
+  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('zkui/src/components') > -1
+  let isVuxVueDemo = this.resourcePath.replace(/\\/g, '/').indexOf('zkui/src/demos') > -1
   if (config.options.vuxDev && this.resourcePath.replace(/\\/g, '/').indexOf('src/components') > -1) {
     isVuxVueFile = true
   }

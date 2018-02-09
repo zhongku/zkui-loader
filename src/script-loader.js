@@ -47,7 +47,7 @@ module.exports = function (source) {
         let file = `vux/${maps[component.originalName]}`
         if (config.options.vuxDev) {
           if (/App\.vue/.test(_this.resourcePath)) {
-            file = file.replace(/vux\/src/g, '.')
+            file = file.replace(/zkui\/src/g, '.')
           } else {
             let relative = '..'
             // component file import other functions
@@ -55,7 +55,7 @@ module.exports = function (source) {
               relative = '../..'
             }
 
-            file = file.replace(/vux\/src/g, relative)
+            file = file.replace(/zkui\/src/g, relative)
           }
         }
         str += `import ${component.newName} from '${file}'\n`

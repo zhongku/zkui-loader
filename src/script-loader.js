@@ -20,12 +20,12 @@ module.exports = function (source) {
   if (i18nPluginsMatch.length) {
     i18nPlugin = i18nPluginsMatch[0]
   }
-  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('zkui/src/components') > -1
+  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('vux/src/components') > -1
   if (config.options.vuxDev && this.resourcePath.replace(/\\/g, '/').indexOf('src/components') > -1) {
     isVuxVueFile = true
   }
 
-  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/zkui/src/components') > -1
+  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/vux/src/components') > -1
 
   if (config.plugins.length) {
     config.plugins.forEach(function (plugin) {
@@ -47,7 +47,7 @@ module.exports = function (source) {
         let file = `vux/${maps[component.originalName]}`
         if (config.options.vuxDev) {
           if (/App\.vue/.test(_this.resourcePath)) {
-            file = file.replace(/zkui\/src/g, '.')
+            file = file.replace(/vux\/src/g, '.')
           } else {
             let relative = '..'
             // component file import other functions
@@ -55,7 +55,7 @@ module.exports = function (source) {
               relative = '../..'
             }
 
-            file = file.replace(/zkui\/src/g, relative)
+            file = file.replace(/vux\/src/g, relative)
           }
         }
         str += `import ${component.newName} from '${file}'\n`

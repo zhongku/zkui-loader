@@ -160,9 +160,9 @@ var vuxMapper = function (opts) {
   let str = ''
   opts.components.forEach(function (one) {
     if (one.originalName === 'AlertPlugin') {
-      str += `import ${one.newName} from 'zkui/src/plugins/Alert'\n`
+      str += `import ${one.newName} from 'vux/src/plugins/Alert'\n`
     } else if (one.originalName === 'ToastPlugin') {
-      str += `import ${one.newName} from 'zkui/src/plugins/Toast'\n`
+      str += `import ${one.newName} from 'vux/src/plugins/Toast'\n`
     }
   })
   return str
@@ -421,28 +421,28 @@ import { C } from 'vux'`
     }, {
       title: 'vux test2',
       string: `import {Group,Cell} from 'vux'
-import value2name from 'zkui/src/filters/value2name'`,
+import value2name from 'vux/src/filters/value2name'`,
       rs: `import { Group, Cell } from 'vux'
-import value2name from 'zkui/src/filters/value2name'`
+import value2name from 'vux/src/filters/value2name'`
 }, {
       title: 'vux test3',
       string: `import {Group,
 Cell} from 'vux'
-import value2name from 'zkui/src/filters/value2name'`,
+import value2name from 'vux/src/filters/value2name'`,
       rs: `import { Group, Cell } from 'vux'
-import value2name from 'zkui/src/filters/value2name'`
+import value2name from 'vux/src/filters/value2name'`
 }, {
       title: 'vux test4',
       string: `import { M1, M2 } from 'vux'
 import { mapMutations, mapState } from 'vuex'
 import { Group, Cell } from 'vux'
 import { Group1, Cell1 } from 'vux'
-import value2name from 'zkui/src/filters/value2name'`,
+import value2name from 'vux/src/filters/value2name'`,
       rs: `import { M1, M2 } from 'vux'
 import { mapMutations, mapState } from 'vuex'
 import { Group, Cell } from 'vux'
 import { Group1, Cell1 } from 'vux'
-import value2name from 'zkui/src/filters/value2name'`
+import value2name from 'vux/src/filters/value2name'`
 }, {
       title: 'vux test5',
       string: `import {
@@ -470,16 +470,16 @@ import { Divider } from 'vux'`
 
     it('vux test', function () {
       const rs = parse(`import {AlertPlugin, ToastPlugin} from 'vux'`, vuxMapper)
-      expect(rs).to.equal(`import AlertPlugin from 'zkui/src/plugins/Alert'
-import ToastPlugin from 'zkui/src/plugins/Toast'
+      expect(rs).to.equal(`import AlertPlugin from 'vux/src/plugins/Alert'
+import ToastPlugin from 'vux/src/plugins/Toast'
 `)
     })
 
     it('vux test7', function () {
       const rs = parse(`import {AlertPlugin, ToastPlugin} from 'vux'
 // import { AlertPlugin } from 'vux'`, vuxMapper)
-      expect(rs).to.equal(`import AlertPlugin from 'zkui/src/plugins/Alert'
-import ToastPlugin from 'zkui/src/plugins/Toast'
+      expect(rs).to.equal(`import AlertPlugin from 'vux/src/plugins/Alert'
+import ToastPlugin from 'vux/src/plugins/Toast'
 
 `)
     })
@@ -489,8 +489,8 @@ import ToastPlugin from 'zkui/src/plugins/Toast'
   AlertPlugin,
     ToastPlugin
 } from 'vux';`, vuxMapper)
-      expect(rs).to.equal(`import AlertPlugin from 'zkui/src/plugins/Alert'
-import ToastPlugin from 'zkui/src/plugins/Toast'
+      expect(rs).to.equal(`import AlertPlugin from 'vux/src/plugins/Alert'
+import ToastPlugin from 'vux/src/plugins/Toast'
 `)
     })
 
@@ -498,8 +498,8 @@ import ToastPlugin from 'zkui/src/plugins/Toast'
       const rs = parse(`import {AlertPlugin,
     ToastPlugin
 } from 'vux'`, vuxMapper)
-      expect(rs).to.equal(`import AlertPlugin from 'zkui/src/plugins/Alert'
-import ToastPlugin from 'zkui/src/plugins/Toast'
+      expect(rs).to.equal(`import AlertPlugin from 'vux/src/plugins/Alert'
+import ToastPlugin from 'vux/src/plugins/Toast'
 `)
     })
 

@@ -699,7 +699,7 @@ function addStyleLoader(source, STYLE, variables, AFTER_LESS_STYLE) {
  * use babel so component's js can be compiled
  */
 function getBabelLoader(projectRoot, name) {
-  name = name || 'vux'
+  name = name || 'zkui'
   if (!projectRoot) {
     projectRoot = path.resolve(__dirname, '../../../')
     if (/\.npm/.test(projectRoot)) {

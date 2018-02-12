@@ -20,12 +20,12 @@ module.exports = function (source) {
   if (i18nPluginsMatch.length) {
     i18nPlugin = i18nPluginsMatch[0]
   }
-  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('vux/src/components') > -1
-  if (config.options.vuxDev && this.resourcePath.replace(/\\/g, '/').indexOf('src/components') > -1) {
+  let isVuxVueFile = this.resourcePath.replace(/\\/g, '/').indexOf('zkui/src/components') > -1
+  if (config.options.vuxDev && this.resourcePath.replace(/\\/g, '/').indexOf('zkui/components') > -1) {
     isVuxVueFile = true
   }
 
-  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/vux/src/components') > -1
+  const isVuxComponent = this.resourcePath.replace(/\\/g, '/').indexOf('/zkui/src/components') > -1
 
   if (config.plugins.length) {
     config.plugins.forEach(function (plugin) {
@@ -38,16 +38,16 @@ module.exports = function (source) {
     })
   }
 
-  if (config.options.useVuxUI && /}\s+from(.*?)('|")vux/.test(source)) {
+  if (config.options.useVuxUI && /}\s+from(.*?)('|")zkui/.test(source)) {
     const maps = this.vuxMaps || utils.getLoaderConfig(this, 'vuxMaps')
     const parser = require('./libs/import-parser')
     source = parser(source, function (opts) {
       let str = ''
       opts.components.forEach(function (component) {
-        let file = `vux/${maps[component.originalName]}`
+        let file = `zkui/${maps[component.originalName]}`
         if (config.options.vuxDev) {
           if (/App\.vue/.test(_this.resourcePath)) {
-            file = file.replace(/vux\/src/g, '.')
+            file = file.replace(/zkui\/src/g, '.')
           } else {
             let relative = '..'
             // component file import other functions

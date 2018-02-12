@@ -1,6 +1,6 @@
 {
   "name": "zkui-loader",
-  "version": "0.1.0",
+  "version": "0.1.05",
   "description": "extended loader for vue-loader",
   "main": "src/index.js",
   "keywords": [

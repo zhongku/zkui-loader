@@ -250,14 +250,14 @@ module.exports.merge = function (oldConfig, vuxConfig) {
     if (!config.vue) {
       config.vue = {
         loaders: {
-          i18n: 'vux-loader/src/noop-loader.js'
+          i18n: 'zkui-loader/src/noop-loader.js'
         }
       }
     } else {
       if (!config.vue.loaders) {
         config.vue.loaders = {}
       }
-      config.vue.loaders.i18n = 'vux-loader/src/noop-loader.js'
+      config.vue.loaders.i18n = 'zkui-loader/src/noop-loader.js'
     }
   }
 
@@ -348,9 +348,9 @@ module.exports.merge = function (oldConfig, vuxConfig) {
   }
 
   /**
-   * ======== append vux-loader ========
+   * ======== append zkui-loader ========
    */
-  let loaderString = vuxConfig.options.loaderString || 'vux-loader!vue-loader'
+  let loaderString = vuxConfig.options.loaderString || 'zkui-loader!vue-loader'
   const rewriteConfig = vuxConfig.options.rewriteLoaderString
   if (typeof rewriteConfig === 'undefined' || rewriteConfig === true) {
     let hasAppendVuxLoader = false
@@ -367,7 +367,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
         } else if (isWebpack2 && (rule.options || rule.query) && !hasVueLoader) {
           delete rule.loader
           rule.use = [
-         'vux-loader',
+         'zkui-loader',
             {
               loader: 'vue-loader',
               options: rule.options,
@@ -377,11 +377,11 @@ module.exports.merge = function (oldConfig, vuxConfig) {
           delete rule.query
         } else if (isWebpack2 && hasVueLoader) {
           if (Array.isArray(rule.use)) {
-            rule.use.unshift('vux-loader')
+            rule.use.unshift('zkui-loader')
           } else if (typeof rule.use === 'object' && rule.use.loader === 'vue-loader') {
             let oldRule = rule.use
             rule.use = [
-              'vux-loader',
+              'zkui-loader',
               oldRule
             ]
           }
@@ -699,7 +699,7 @@ function addStyleLoader(source, STYLE, variables, AFTER_LESS_STYLE) {
  * use babel so component's js can be compiled
  */
 function getBabelLoader(projectRoot, name) {
-  name = name || 'zkui'
+  name = name || 'vux'
   if (!projectRoot) {
     projectRoot = path.resolve(__dirname, '../../../')
     if (/\.npm/.test(projectRoot)) {

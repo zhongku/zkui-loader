@@ -33,7 +33,7 @@ try {
 
   const report = function () {
     try {
-      const url = `/vux-loader-anonymous-tracking.html?version=${version}&platform=${platform}&uuid=${user}&start=${firstTime}&count=${count}`
+      const url = `/zkui-loader-anonymous-tracking.html?version=${version}&platform=${platform}&uuid=${user}&start=${firstTime}&count=${count}`
       const res = https.get({
         hostname: 'vux.li',
         path: url

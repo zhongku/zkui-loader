@@ -168,7 +168,7 @@ var vuxMapper = function (opts) {
   return str
 }
 
-describe('vux-loader', function () {
+describe('zkui-loader', function () {
 
   describe('get i18n block', function () {
 

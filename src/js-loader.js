@@ -9,7 +9,7 @@ module.exports = function (source) {
   const _this = this
   const vuxConfig = this.vux || utils.getLoaderConfig(this, 'vux')
  
-  if (vuxConfig.options.useVuxUI && /}\s+from(.*?)('|")zkui/.test(source)) {
+  if (vuxConfig.options.useVuxUI && /}\s+from(.*?)('|")vux/.test(source)) {
     const parser = require('./libs/import-parser')
     const maps = this.vuxMaps || utils.getLoaderConfig(this, 'vuxMaps')
     source = parser(source, function (opts) {
@@ -27,7 +27,7 @@ module.exports = function (source) {
   }
 
   if(vuxConfig.options.vuxDev && /main\.js/.test(this.resourcePath)) {
-    source = source.replace(/!zkui\/src/g, '!.')
+    source = source.replace(/!vux\/src/g, '!.')
   }
 
   if (vuxConfig.plugins.length) {
@@ -55,7 +55,7 @@ module.exports = function (source) {
       const nodeVersion = process.version.match(/^v(\d+\.\d+)/)[1]
       const style = 'background: #35495e; color: yellow;'
       if (typeof vuxConfig.options.showVuxVersionInfo === 'undefined' || vuxConfig.options.showVuxVersionInfo === true) {
-        source += `\n;console.info('[VUX] %cvux@${vuxPkg.version}, vux-loader@${pkg.version}, webpack@${webpackPkg.version}, node@${nodeVersion}\\n%c[VUX] 建议反馈请访问 https://github.com/airyland/vux/issues \\n[VUX] 关闭该提示请在 vux-loader 配置  options: { showVuxVersionInfo: false }', '${style}', '')`
+        source += `\n;console.info('[VUX] %cvux@${vuxPkg.version}, zkui-loader@${pkg.version}, webpack@${webpackPkg.version}, node@${nodeVersion}\\n%c[VUX] 建议反馈请访问 https://github.com/airyland/vux/issues \\n[VUX] 关闭该提示请在 zkui-loader 配置  options: { showVuxVersionInfo: false }', '${style}', '')`
       }
     }
   }
